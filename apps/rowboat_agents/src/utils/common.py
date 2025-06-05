@@ -21,7 +21,6 @@ try:
     ANTHROPIC_AVAILABLE = True
 except ImportError:
     ANTHROPIC_AVAILABLE = False
-
 def setup_logger(name, log_file='./run.log', level=logging.INFO, log_to_file=False):
     """Function to set up a logger with a specific name and log file."""
     formatter = logging.Formatter('%(asctime)s %(levelname)s [%(filename)s:%(lineno)d] %(message)s')
