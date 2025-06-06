@@ -43,6 +43,8 @@
 Powered by OpenAI's Agents SDK, Rowboat is the fastest way to build multi-agents!
 
 ## Quick start
+
+### Option 1: Docker (Recommended for Production)
 1. Set your OpenAI key
       ```bash
    export OPENAI_API_KEY=your-openai-api-key
@@ -57,9 +59,53 @@ Powered by OpenAI's Agents SDK, Rowboat is the fastest way to build multi-agents
 
 3. Access the app at [http://localhost:3000](http://localhost:3000).
 
-Note: We have added native RAG support including file-uploads and URL scraping. See the [RAG](https://docs.rowboatlabs.com/using_rag) section of our docs for this.
+### Option 2: Local Development (Faster for Development)
+1. Set your API keys in `.env` file
+   ```bash
+   export OPENAI_API_KEY=your-openai-api-key
+   export GEMINI_API_KEY=your-gemini-api-key  # Optional
+   export ANTHROPIC_API_KEY=your-anthropic-api-key  # Optional
+   ```
 
-Note: See the [Using custom LLM providers](https://docs.rowboatlabs.com/setup/#using-custom-llm-providers) section of our docs for using custom providers like OpenRouter and LiteLLM.
+2. Clone and start with local development script
+   ```bash
+   git clone git@github.com:rowboatlabs/rowboat.git
+   cd rowboat
+   ./start_local.sh
+   ```
+
+3. Access the app at [http://localhost:3000](http://localhost:3000).
+
+**Local Development Benefits:**
+- 🚀 **Faster startup** - No Docker overhead
+- 🔧 **Better debugging** - Direct Python execution with full logging
+- 🧠 **Multi-model support** - Test OpenAI, Anthropic Claude, and Google Gemini models
+- ⚡ **Hot reloading** - Instant code changes during development
+
+## Supported AI Models
+
+Rowboat supports multiple AI providers for maximum flexibility:
+
+### OpenAI (Default)
+- GPT-4o, GPT-4, GPT-3.5-turbo
+- Requires: `OPENAI_API_KEY`
+
+### Google Gemini 
+- `gemini-1.5-pro` - Advanced reasoning and analysis
+- `gemini-1.5-flash` - Fast, efficient responses  
+- `gemini-2.0-flash-exp` - Latest experimental features
+- `gemini-2.5-pro-preview-05-06` - Cutting-edge model for complex coding tasks
+- Requires: `GEMINI_API_KEY`
+
+### Anthropic Claude
+- Claude-3.5-sonnet, Claude-3-haiku, Claude-3-opus
+- Requires: `ANTHROPIC_API_KEY`
+
+### Custom Providers
+- OpenRouter, LiteLLM, Azure OpenAI, and more
+- See [Using custom LLM providers](https://docs.rowboatlabs.com/setup/#using-custom-llm-providers)
+
+Note: We have added native RAG support including file-uploads and URL scraping. See the [RAG](https://docs.rowboatlabs.com/using_rag) section of our docs for this.
 
 ## Demo
 
