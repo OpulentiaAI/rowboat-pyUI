@@ -10,7 +10,7 @@ export USE_RAG=true
 export USE_RAG_UPLOADS=true
 
 # Start with the base command and profile flags
-CMD="docker-compose"
+CMD="docker compose"
 CMD="$CMD --profile setup_qdrant"
 CMD="$CMD --profile qdrant"
 CMD="$CMD --profile rag_text_worker"
